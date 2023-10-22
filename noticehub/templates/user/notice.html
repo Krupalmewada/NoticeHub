@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>All Notices</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'user/css/style2.css'%}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+</head>
+<body>
+	<div class="header" >
+		<p align="center">Notice Hub</p>
+	</div>
+
+	<div class="card" style="width: 18rem;" >
+		<div class="card-body ">
+		  <!-- <h5 class="card-title">{{row.subject}}</h5> -->
+		  <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+		  <p class="card-text">
+			{% for row in result %}
+			<div class="notice">
+				<h3 >{{row.subject}}</h3>
+				<p class="flo1">Created At : {{row.created_at}}</p>
+				<p class="flo1">Updated At : {{row.updated_at}}</p>
+				<p>{{row.description}}</p>
+				
+			</div>
+		{% endfor %}</p>
+		 
+		</div>
+	  </div>
+	
+
+	<div class="footer">
+		<!-- <h1 align="center">contact us</h1> -->
+			<h5 style="padding: 10px; font-size: 20px;">Contact details</h5>
+			<p style="padding: 13px;"> <i class="fa fa-phone fa-lg" aria-hidden="true"></i> 01234 56789</p>
+			<p style="padding: 13px;"><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact us</a></p>
+			<p style="padding: 13px;"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> Ahmedabad,Gujarat, India</p>
+	
+	</div>
+</body>
+</html>
